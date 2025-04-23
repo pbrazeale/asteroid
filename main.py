@@ -3,6 +3,8 @@ from constants import *
 
 def main():
     pygame.init()
+    clock = pygame.time.clock()
+    dt = 0
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     while True:
         for event in pygame.event.get():
@@ -10,6 +12,8 @@ def main():
                 return
         screen.fill((0,0,0))
         pygame.display.flip()
+        tick = clock.tick(60)
+        dt = tick / 1000
 
     pygame.quit()
 
