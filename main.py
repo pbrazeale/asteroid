@@ -42,6 +42,12 @@ def main():
             if state == True:
                 print("Game over!")
                 sys.exit()
+            for bullet in shots:
+                state = asteroid.collision(bullet)
+                if state == True:
+                    asteroid.kill()
+                    bullet.kill()
+
 
 
         pygame.display.flip()
